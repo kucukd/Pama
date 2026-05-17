@@ -20,10 +20,19 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "PAMA Proje Mühendislik İnşaat",
+    "name": "PAMA Proje Mühendislik İnşaat ve Tic. Ltd. Şti.",
     "url": "https://www.pama.com.tr/",
     "logo": "https://www.pama.com.tr/assets/images/pama-logo.png",
     "description": "Hidromekanik teçhizatlar, su yapıları, mekanik tesisat, çelik konstrüksiyon, imalat ve montaj çözümleri.",
+    "telephone": "+90-312-750-04-61",
+    "email": "info@pama.com.tr",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Büyükesat Mah. Koza 1 Cad. Sev Apt. No:153/4",
+      "addressLocality": "Çankaya",
+      "addressRegion": "Ankara",
+      "addressCountry": "TR"
+    },
     "areaServed": "TR",
     "knowsAbout": ["Hidromekanik teçhizat", "Baraj kapakları", "Mekanik tesisat", "Çelik konstrüksiyon", "Pompa istasyonları"]
   }
@@ -437,9 +446,12 @@
             PAMA ekibiyle hızlı bir ön değerlendirme başlatın.
           </p>
           <div class="contact-cards">
+            <a href="tel:+903127500461"><small>Telefon</small><strong>0312 750 04 61</strong></a>
             <a href="mailto:info@pama.com.tr"><small>E-posta</small><strong>info@pama.com.tr</strong></a>
-            <a href="https://www.pama.com.tr" target="_blank" rel="noreferrer"><small>Web</small><strong>www.pama.com.tr</strong></a>
-            <div><small>Merkez</small><strong>Ankara / Türkiye</strong></div>
+            <div>
+              <small>Adres</small>
+              <strong>Büyükesat Mah. Koza 1 Cad. Sev Apt. No:153/4<br />Çankaya / Ankara</strong>
+            </div>
           </div>
         </div>
         <form class="contact-form reveal reveal-delay-1" id="contactForm">
@@ -466,6 +478,14 @@
             Mesaj
             <textarea name="message" rows="5" placeholder="Kısa proje notunuzu paylaşın"></textarea>
           </label>
+          <label class="form-consent">
+            <input type="checkbox" name="kvkk" required />
+            <span>
+              <a href="kvkk-aydinlatma.html">KVKK Aydınlatma Metni</a> ve
+              <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>'nı okudum; kişisel verilerimin
+              talebimin değerlendirilmesi amacıyla işlenmesine onay veriyorum.
+            </span>
+          </label>
           <button class="btn btn-primary magnetic" type="submit">Ön değerlendirme iste</button>
           <p class="form-note" id="formNote" role="status"></p>
         </form>
@@ -484,7 +504,36 @@
         <a href="#iletisim">İletişim</a>
       </div>
     </div>
+    <div class="container footer-legal">
+      <p class="footer-legal__title">PAMA Proje Mühendislik İnşaat ve Tic. Ltd. Şti.</p>
+      <dl class="footer-legal__list">
+        <div><dt>Adres</dt><dd>Büyükesat Mah. Koza 1 Cad. Sev Apt. No:153/4, Çankaya / Ankara</dd></div>
+        <div><dt>Telefon</dt><dd><a href="tel:+903127500461">0312 750 04 61</a></dd></div>
+        <div><dt>E-posta</dt><dd><a href="mailto:info@pama.com.tr">info@pama.com.tr</a></dd></div>
+        <div><dt>Ticaret Sicil No</dt><dd>435806 — Ankara Ticaret Sicili Müdürlüğü</dd></div>
+        <div><dt>Vergi Dairesi</dt><dd>Cumhuriyet V.D.</dd></div>
+      </dl>
+    </div>
+    <div class="container footer-bottom">
+      <nav class="footer-legal-links" aria-label="Yasal metinler">
+        <a href="kvkk-aydinlatma.html">KVKK Aydınlatma Metni</a>
+        <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
+        <a href="cerez-politikasi.html">Çerez Politikası</a>
+        <a href="kullanim-kosullari.html">Kullanım Koşulları</a>
+      </nav>
+      <p class="footer-copy">© <span id="footerYear"></span> PAMA Proje Mühendislik İnşaat ve Tic. Ltd. Şti. Tüm hakları saklıdır.</p>
+    </div>
   </footer>
+
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-hidden="true">
+    <div class="cookie-banner__inner">
+      <p id="cookieTitle">Bu site, deneyimi iyileştirmek için çerezler kullanır. Detaylar için <a href="cerez-politikasi.html">Çerez Politikası</a> metnini inceleyebilirsiniz.</p>
+      <div class="cookie-banner__actions">
+        <button type="button" class="btn btn-ghost" id="cookieReject">Yalnızca zorunlu</button>
+        <button type="button" class="btn btn-primary" id="cookieAccept">Kabul et</button>
+      </div>
+    </div>
+  </div>
 
   <button class="back-to-top" type="button" aria-label="Yukarı çık">↑</button>
   <script src="assets/js/main.js" defer></script>

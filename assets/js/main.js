@@ -1,6 +1,29 @@
 (() => {
   const root = document.documentElement;
   const body = document.body;
+  const footerYear = document.querySelector('#footerYear');
+  footerYear && (footerYear.textContent = String(new Date().getFullYear()));
+
+  const cookieBanner = document.querySelector('#cookieBanner');
+  const cookieAccept = document.querySelector('#cookieAccept');
+  const cookieReject = document.querySelector('#cookieReject');
+  const cookieKey = 'pama_cookie_consent';
+
+  const showCookieBanner = () => {
+    if (!cookieBanner || localStorage.getItem(cookieKey)) return;
+    cookieBanner.classList.add('is-visible');
+    cookieBanner.setAttribute('aria-hidden', 'false');
+  };
+
+  const hideCookieBanner = (value) => {
+    localStorage.setItem(cookieKey, value);
+    cookieBanner?.classList.remove('is-visible');
+    cookieBanner?.setAttribute('aria-hidden', 'true');
+  };
+
+  cookieAccept?.addEventListener('click', () => hideCookieBanner('all'));
+  cookieReject?.addEventListener('click', () => hideCookieBanner('essential'));
+  showCookieBanner();
   const header = document.querySelector('.site-header');
   const nav = document.querySelector('.primary-nav');
   const navToggle = document.querySelector('.nav-toggle');
