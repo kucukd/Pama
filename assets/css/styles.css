@@ -995,35 +995,6 @@ select {
   color: rgba(255, 255, 255, .68);
 }
 
-.capability-layout {
-  display: grid;
-  gap: 24px;
-}
-
-.capability-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.cap-filter {
-  padding: 12px 16px;
-  color: var(--green-900);
-  border: 1px solid rgba(0, 95, 55, .16);
-  border-radius: 999px;
-  background: var(--white);
-  cursor: pointer;
-  font-weight: 900;
-  transition: background .22s ease, color .22s ease, transform .22s ease;
-}
-
-.cap-filter:hover,
-.cap-filter.active {
-  color: var(--white);
-  background: var(--green-700);
-  transform: translateY(-1px);
-}
-
 .capability-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1037,13 +1008,6 @@ select {
   background: var(--white);
   box-shadow: 0 18px 54px rgba(1, 29, 17, .08);
   transition: opacity .25s ease, transform .25s ease, filter .25s ease;
-}
-
-.capability-card.is-hidden {
-  opacity: .08;
-  transform: scale(.985);
-  pointer-events: none;
-  filter: grayscale(.5);
 }
 
 .capability-card picture {

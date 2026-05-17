@@ -142,20 +142,6 @@
     });
   });
 
-  const filters = document.querySelectorAll('.cap-filter');
-  const capabilityCards = document.querySelectorAll('.capability-card');
-  filters.forEach(button => {
-    button.addEventListener('click', () => {
-      const filter = button.dataset.filter;
-      filters.forEach(btn => btn.classList.toggle('active', btn === button));
-      capabilityCards.forEach(card => {
-        const categories = (card.dataset.category || '').split(' ');
-        const show = filter === 'all' || categories.includes(filter);
-        card.classList.toggle('is-hidden', !show);
-      });
-    });
-  });
-
   const form = document.querySelector('#contactForm');
   const formNote = document.querySelector('#formNote');
   form?.addEventListener('submit', event => {
