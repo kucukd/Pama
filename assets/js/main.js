@@ -122,9 +122,11 @@
     });
   });
 
+  const canTilt = window.matchMedia('(min-width: 1025px) and (hover: hover)').matches;
+
   document.querySelectorAll('.tilt-card').forEach(card => {
     card.addEventListener('pointermove', event => {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      if (!canTilt || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       const rect = card.getBoundingClientRect();
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
@@ -139,7 +141,7 @@
 
   document.querySelectorAll('.magnetic').forEach(button => {
     button.addEventListener('pointermove', event => {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      if (!canTilt || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       const rect = button.getBoundingClientRect();
       const x = (event.clientX - rect.left - rect.width / 2) * 0.18;
       const y = (event.clientY - rect.top - rect.height / 2) * 0.18;
