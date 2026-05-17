@@ -30,10 +30,18 @@
   const preloader = document.querySelector('.preloader');
   const backToTop = document.querySelector('.back-to-top');
 
+  const closeNav = () => {
+    nav?.classList.remove('is-open');
+    navToggle?.setAttribute('aria-expanded', 'false');
+    navToggle?.setAttribute('aria-label', 'Menüyü aç');
+    body.classList.remove('nav-open');
+  };
+
   const onScroll = () => {
     const scrolled = window.scrollY > 24;
     header?.classList.toggle('is-scrolled', scrolled);
     backToTop?.classList.toggle('is-visible', window.scrollY > 700);
+    if (nav?.classList.contains('is-open')) closeNav();
   };
 
   window.addEventListener('scroll', onScroll, { passive: true });
@@ -45,18 +53,18 @@
 
   navToggle?.addEventListener('click', () => {
     const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-    navToggle.setAttribute('aria-expanded', String(!isOpen));
-    navToggle.setAttribute('aria-label', isOpen ? 'Menüyü aç' : 'Menüyü kapat');
-    nav?.classList.toggle('is-open', !isOpen);
-    body.classList.toggle('nav-open', !isOpen);
+    if (isOpen) {
+      closeNav();
+      return;
+    }
+    navToggle.setAttribute('aria-expanded', 'true');
+    navToggle.setAttribute('aria-label', 'Menüyü kapat');
+    nav?.classList.add('is-open');
+    body.classList.add('nav-open');
   });
 
   nav?.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      nav?.classList.remove('is-open');
-      navToggle?.setAttribute('aria-expanded', 'false');
-      body.classList.remove('nav-open');
-    });
+    link.addEventListener('click', closeNav);
   });
 
   backToTop?.addEventListener('click', () => {
